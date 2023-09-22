@@ -1,0 +1,39 @@
+Creation of docker image:
+first command:
+docker build -t sample_node_test .
+
+main step here is to create a docker public repository with same name as sample_node_test.
+
+next step is to :
+second command:
+docker login
+
+third command:
+creation of tag 
+According to that naming convention, the unofficial image name should be 
+named as follows: <username>/<image_name>:<tag_name>. In my case, I need to rename it as gauravvv/example_image:latest
+here sample_node_test is image name and latest is the tag. after tag is repo name.
+docker tag sample_node_test:latest shrivatsarao26/sample_node_test:latest
+
+
+fourth command:
+we need to push use this command.
+docker push shrivatsarao26/sample_node_test:latest
+
+Upload your tagged image to the repository using the docker push command. 
+Once complete, you can see the image there on Docker Hub. 
+That's it; you have successfully published your Docker image. 
+If you want to test out your image, use the below command and launch a container from it:
+
+fifth command to test the docker-image:
+pull it first.
+docker pull shrivatsarao26/sample_node_test:latest
+
+
+then run it:
+docker run -it shrivatsarao26/sample_node_test:latest
+
+keep image name and repo name same to same.
+check the below link for proper explanation.
+
+https://www.pluralsight.com/guides/create-docker-images-docker-hub
